@@ -1,5 +1,3 @@
-# Design_Patterns
-
 1. Abstract Factory Method
 Definizione:
 Il pattern Abstract Factory fornisce un'interfaccia per creare famiglie di oggetti correlati o dipendenti senza specificare
@@ -162,10 +160,9 @@ Il pattern Visitor consente di separare un algoritmo dalla struttura degli ogget
 Questo pattern fornisce un modo per aggiungere nuove operazioni a classi esistenti senza modificarle.
 
 Esempio di utilizzo:
-Immagina di avere un insieme di oggetti che compongono una struttura complessa come un albero sintattico
-di un linguaggio di programmazione.
-Utilizzando il pattern Visitor, puoi definire operazioni come la stampa, la validazione o
-l'interpretazione senza cambiare le classi degli elementi su cui queste operazioni vengono eseguite.
+Immagina di avere un sistema di gestione clienti in un contesto di assicurazioni.
+il pattern Visitor permette a un oggetto di attraversare una lista di clienti e inviare loro messaggi
+personalizzati riguardanti le assicurazioni.
 
 15. Adapter Pattern
 Definizione:
@@ -186,9 +183,12 @@ strettamente correlate in due gerarchie separate - astrazione e implementazione 
  e modificate separatamente.
 
 Esempio di utilizzo:
-Immagina una applicazione di rendering grafico che deve operare su diverse piattaforme (Windows, Linux, macOS).
-Puoi definire un'interfaccia Renderer come un bridge che separa l'interfaccia utente ad alto livello dal rendering grafico sottostante.
-Le implementazioni concrete di Renderer possono quindi variare indipendentemente dall'interfaccia utente, una per ciascuna piattaforma.
+
+In un'applicazione di consegna di pizze, ci sono diversi tipi di pizze disponibili, ognuna con il proprio gusto unico,
+e diversi tipi di ristoranti con stili di cucina differenti. Quando un ordine per una pizza viene effettuato, l'applicazione
+utilizza il bridge pattern per garantire che la pizza venga composta secondo le preferenze del cliente e cucinata
+ seguendo lo stile specifico del ristorante scelto. In questo modo, il bridge pattern facilita l'integrazione tra
+ i diversi tipi di pizze e i vari stili di cucina dei ristoranti, consentendo una consegna efficiente e personalizzata.
 
 17. Composite Pattern
 Definizione:
@@ -197,10 +197,11 @@ Questo pattern organizza gli oggetti in una struttura ad albero per rappresentar
 Permette agli utenti di lavorare con singoli oggetti e composizioni di oggetti in modo uniforme.
 
 Esempio di utilizzo:
-Nel sistema di gestione dei file, sia le cartelle che i file individuali possono essere trattati allo stesso modo.
-Una cartella può contenere file o altre cartelle. Entrambi i tipi di oggetti possono implementare l'interfaccia FileSystemItem
-e metodi come getSize(). La classe Folder funziona come un composite che può aggiungere o rimuovere oggetti FileSystemItem,
-mentre la classe File rappresenta oggetti foglia che non contengono altri FileSystemItem.
+Immagina di avere un sistema di gestione di box regalo con contiene oggetti singoli e altre scatole. Il Client crea
+una scatola principale e aggiunge alcuni oggetti come libri e videogiochi, insieme a una scatola più piccola che contiene un libro.
+Il prezzo totale di tutti gli oggetti all'interno della scatola principale viene quindi calcolato.
+Il pattern Composite consente di trattare singoli oggetti e composizioni di oggetti allo stesso modo, semplificando
+il codice e rendendo le operazioni uniformi su singoli oggetti e gruppi di oggetti.
 
 18. Decorator Pattern
 Definizione:
@@ -209,15 +210,14 @@ dinamicamente senza alterare la loro struttura tramite l'ereditarietà. Questo p
 al derivare classi estese per estendere le funzionalità.
 
 Esempio di utilizzo:
-Supponi di avere una classe di visualizzazione di testo base in un'applicazione grafica.
-Puoi usare il Decorator Pattern per aggiungere funzionalità come lo scrolling o il bordo decorativo dinamicamente
-durante l'esecuzione senza modificare la classe di visualizzazione originale.
+Immagina di avere un sistema di notifiche. Il decorator pattern permette di estendere le funzionalità dei vari social.
+In questo modo, è possibile inviare notifiche attraverso vari canali senza modificare direttamente il codice.
 
 19. Facade Pattern
 Definizione:
 Il Facade Pattern è un pattern strutturale che fornisce un'interfaccia unificata a un insieme di interfacce in un sottosistema.
-
 Questo pattern definisce un'interfaccia di alto livello che rende il sottosistema più facile da usare.
+
 Esempio di utilizzo:
 Considera un sistema complicato per la gestione di dispositivi multimediali in un'automobile,
 che include sottosistemi per l'audio, il video e la connettività Bluetooth. Un facade può offrire una semplice interfaccia
@@ -230,8 +230,8 @@ a grana fine in modo efficiente. È particolarmente utile quando una grande part
 può essere condivisa e resa esterna allo stesso.
 
 Esempio di utilizzo:
-Nel contesto di un editor di testo che può mostrare molte istanze della lettera 'A' sullo schermo,
-invece di creare un oggetto separato per ogni 'A', un oggetto flyweight può essere creato e condiviso tra tutte le occorrenze.
+Immagina di avere un'applicazione per gestire i tipi di libri. Utilizza una factory per creare e condividere istanze di tipi di libro.
+In questo modo, se viene richiesto lo stesso tipo di libro più volte, viene restituito lo stesso oggetto anziché crearne uno nuovo ogni volta. Ciò consente di risparmiare memoria e migliorare le prestazioni complessive dell'applicazione.
 
 21. Proxy Pattern
 Definizione:
